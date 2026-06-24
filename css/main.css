@@ -1,0 +1,334 @@
+:root {
+    --bg-translucido: rgba(0, 0, 0, 0.377);
+    --cor-neon-roxo: #b55fe6;
+    --cor-neon-azul: #00f0ff;
+    --texto-claro: #ffffff;
+    --cor-texto-claro: #e0d9f0;
+    --bg-roxo-translucido: #21012e85;
+    --glow-azul: 0 0 5px var(--cor-neon-azul),
+        0 0 8px var(--cor-neon-azul);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* animations */
+@keyframes deslocarBotao {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+}
+
+.background {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 3px solid var(--cor-neon-azul);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #21012e81;
+    backdrop-filter: blur(1px);
+    padding: 15px 50px;
+    flex-direction: row;
+    width: 100%;
+    height: 10vh;
+    position: fixed;
+    z-index: 1000;
+    margin-top: 5vh;
+}
+
+
+.icons img {
+    width: 150px;
+    height: 150px;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+    background-color: var(--bg-translucido);
+    border-radius: 20px;
+    margin-right: 60px;
+    padding-right: 10px;
+    margin-left: 2vh;
+    padding-left: 10px;
+}
+
+header ul {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+}
+
+header ul li {
+    margin: 0 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+header ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+header ul li:hover {
+    transform: scale(1.05);
+}
+
+.menu-item-vazado {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 1000;
+    font-size: 2.5rem;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--cor-texto-claro);
+    margin-right: 2rem;
+}
+
+main {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    grid-column: 1 / -1;
+}
+
+.hero {
+    height: 70vh;
+    width: calc(85vh * 16 / 9);
+    background-color: rgba(0, 0, 0, 0.507);
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h3 {
+    color: black;
+    background-color: var(--cor-neon-azul);
+    padding: 10px;
+    border-radius: 20px;
+    width: 250px;
+    margin: 0 auto 30px auto;
+
+}
+
+.hero h1 {
+    font-size: 5rem;
+    color: var(--cor-neon-azul);
+    text-shadow: var(--glow-azul);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-weight: 2000;
+    font-size: 1.7rem;
+    color: var(--texto-claro);
+    max-width: 600px;
+    margin: 20px auto 40px auto;
+
+}
+
+.arrow-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    margin-bottom: 70px;
+}
+
+.arrow-button a {
+    text-decoration: none;
+}
+
+.arrow-button img {
+    width: 200px;
+    height: 200px;
+}
+
+.arrow-button:hover {
+    animation: deslocarBotao 1.3s ease-in-out infinite;
+}
+
+.btn-hero {
+    display: inline-block;
+    color: var(--cor-neon-azul);
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    background-color: black;
+    background-image: url('/img/bottons-svg/bordas.svg');
+    background-size: 130% 130%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.7s ease-in-out;
+}
+
+.btn-hero:hover {
+    color: var(--cor-neon-roxo);
+    transform: scale(1.05);
+}
+
+.games {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-translucido);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.games a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.game-icons {
+    margin-left: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 50px 0;
+    transition: transform 0.5s ease-in-out;
+    margin-left: 50px;
+}
+
+.game-icons p {
+    color: var(--texto-claro);
+    font-weight: 2000;
+    font-size: 1.7rem;
+    color: var(--texto-claro);
+    width: 500px;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.game-icons h2 {
+    font-size: 3.5rem;
+    color: var(--cor-neon-azul);
+    text-shadow: var(--glow-azul);
+    margin-bottom: 10px;
+    margin-bottom: -20px;
+}
+
+.game-icons img {
+    width: 190px;
+    height: 190px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.game-icons img:hover {
+    transform: scale(1.1);
+}
+
+.carousel {
+    box-shadow: 0 0 10px var(--cor-neon-azul);
+    position: relative;
+    width: 800px;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.container a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+
+.container a.ativo {
+    opacity: 1;
+}
+
+.container img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.final {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/bg3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.final p {
+    width: 800px;
+    font-weight: 800;
+    font-size: 1.7rem;
+    color: var(--texto-claro);
+    background-color: var(--bg-roxo-translucido);
+    padding: 50px;
+    text-align: center;
+
+
+    border-width: 5px;
+    border-style: double;
+    border-color: #aa0000;
+
+
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.35),
+        inset 0 0 10px rgba(255, 255, 255, 0.35);
+}
+
+footer {
+    width: 100%;
+}

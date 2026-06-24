@@ -1,0 +1,26 @@
+    
+    /* 1. Evita que a barra de rolagem "empurre" o seu layout para o lado */
+    scrollbar-gutter: stable;
+    
+    /* 2. Deixa a rolagem do mouse/touch mais responsiva e fluida */
+    scroll-padding-top: 12vh; /* Altura aproximada do seu header para o link não brotar sumido atrás dele */
+}
+
+/* 3. Estilização moderna para a barra de rolagem (Scrollbar) */
+html::-webkit-scrollbar {
+    width: 10px; /* Largura da barra */
+}
+
+html::-webkit-scrollbar-track {
+    background: #000000; /* Cor do fundo da barra (combina com seu body) */
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--cor-neon-roxo); /* Cor do "pino" de arrastar */
+    border-radius: 5px;
+    border: 2px solid #000000; /* Cria um espaçamento elegante */
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background: var(--cor-neon-azul); /* Muda para azul neon quando passa o mouse */
+}
