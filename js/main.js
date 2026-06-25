@@ -1,5 +1,4 @@
 const slider = document.getElementById('slider');
-// Mudança importante: selecionamos os links <a>, que são os blocos dos nossos slides
 const slides = document.querySelectorAll('#slider a');
 
 let idx = 0;
@@ -32,3 +31,30 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+// Funções de interação para a página de competições
+function limpaTela() {
+    document.querySelectorAll(".ativo").forEach(elemento => {
+        elemento.classList.add('escondido');
+    });
+}
+
+function voltaTudo() {
+        document.querySelectorAll(".ativo").forEach(elemento => {
+        elemento.classList.remove('escondido');
+        
+    });
+}
+
+// Abre o formulário ou seção solicitada no modal da página de competições
+function mostraFormulario(idSecao) {
+    limpaTela();
+    const secaoAlvo = document.getElementById(idSecao);
+    secaoAlvo.classList.add('ativo');
+}
+
+// Fecha o formulário aberto e retorna à visualização principal
+function fecharFormulario(idSecao) {
+    document.getElementById(idSecao).classList.remove('ativo');
+    voltaTudo();
+}

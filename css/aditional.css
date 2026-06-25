@@ -19,7 +19,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* animations */
 @keyframes deslocarBotao {
     0% {
         transform: translateX(-50%) translateY(0);
@@ -32,19 +31,20 @@ html {
     100% {
         transform: translateX(-50%) translateY(0);
     }
+}
 
-    fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(2vh);
-        }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(2vh);
+    }
 
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
+
 
 .principal-vazado {
     font-family: 'Open Sans', sans-serif;
@@ -84,6 +84,7 @@ header div:hover {
     transform: scale(1.05);
 }
 
+/* Layout da página de competições: grade de botões de ação */
 .main-competicoes {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -116,7 +117,11 @@ header div:hover {
     transition: transform 0.4s ease-in-out;
 }
 
-.main-competicoes button:hover{
+.main-competicoes a {
+    text-decoration: none;
+}
+
+.main-competicoes button:hover {
     transform: scale(1.01);
 }
 
@@ -135,6 +140,17 @@ header div:hover {
     -webkit-text-stroke: 2px var(--cor-texto-claro);
 }
 
+.ativo {
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    opacity: 1;
+    visibility: visible;
+}
+
+.ativo.escondido {
+    opacity: 0;
+    visibility: hidden;
+}
+
 #divulgar {
     background-image: url(../img/btn-background/divulgar.png);
 }
@@ -151,6 +167,154 @@ header div:hover {
     background-image: url(../img/btn-background/assistir.png)
 }
 
-.background-competicoes{
-        background: linear-gradient(to top, black, rgb(48, 9, 48), black);
+.background-competicoes {
+    background: linear-gradient(to top, black, rgb(48, 9, 48), black);
+}
+
+/* Modal/overlay para exibir formulários e conteúdo complementar */
+.secao-conteudo {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.secao-conteudo.ativo {
+    display: flex;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Estilização do formulário de divulgação de competições */
+.form-container {
+    position: relative !important;
+    width: 90%;
+    max-width: 550px;
+    background-color: rgba(15, 2, 22, 0.95);
+    border: 2px solid var(--cor-neon-roxo);
+    box-shadow: 0 0 25px rgba(181, 95, 230, 0.4);
+    border-radius: 15px;
+    padding: 2.5rem 2rem 2rem 2rem;
+    color: var(--texto-claro);
+}
+
+.form-container h2 {
+    font-size: 1.8rem;
+    color: var(--cor-neon-azul);
+    text-shadow: var(--glow-azul);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.form-container p {
+    text-align: center;
+    color: var(--cor-texto-claro);
+    font-size: 0.9rem;
+    margin-bottom: 1.8rem;
+    opacity: 0.8;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.2rem;
+    width: 100%;
+}
+
+.input-group-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.input-group label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--cor-texto-claro);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.input-group input,
+.input-group select {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 0.6rem 0.8rem;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: var(--cor-neon-azul);
+    box-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+}
+
+.btn-enviar {
+    display: block !important;
+    width: 100% !important;
+    max-width: 280px !important;
+    height: 10vh !important;
+    line-height: 45px !important;
+    padding: 0 !important;
+
+    margin: 2rem auto 0 auto !important;
+    background-color: var(--cor-neon-azul);
+    color: #000;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: var(--glow-azul);
+    text-align: center;
+}
+
+.btn-enviar:hover {
+    background-color: var(--cor-neon-roxo);
+    color: #fff;
+    box-shadow: 0 0 12px var(--cor-neon-roxo);
+    transform: scale(1.05);
+}
+
+.btn-fechar {
+    position: absolute !important;
+    top: 20px !important;
+    right: 20px !important;
+    background: none !important;
+    border: none !important;
+    color: var(--cor-texto-claro) !important;
+    font-size: 2rem !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    opacity: 0.6 !important;
+    z-index: 10000 !important;
+}
+
+.btn-fechar:hover {
+    color: var(--cor-neon-roxo) !important;
+    text-shadow: 0 0 8px var(--cor-neon-roxo) !important;
+    opacity: 1 !important;
+    transform: scale(1.1) !important;
+}
+
+@media (max-width: 600px) {
+    .input-group-row {
+        flex-direction: column;
+        gap: 0;
+    }
 }

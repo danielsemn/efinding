@@ -1,3 +1,4 @@
+/* Base do site: variáveis de cor, reset e comportamento geral */
 :root {
     --bg-translucido: rgba(0, 0, 0, 0.377);
     --cor-neon-roxo: #b55fe6;
@@ -19,7 +20,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* animations */
 @keyframes deslocarBotao {
     0% {
         transform: translateX(-50%) translateY(0);
@@ -33,17 +33,22 @@ html {
         transform: translateX(-50%) translateY(0);
     }
 
-    fadeIn {
+
+
+}
+
+@keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(2vh); /* Dá um leve efeito de subida opcional */
+        transform: translateY(2vh);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
-}
+
 body {
     opacity: 0;
     transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
@@ -57,10 +62,8 @@ body {
 
 body.pagina-carregada {
     opacity: 1;
-    animation: fadeIn 0.5s ease-in-out forwards;
 }
 
-/* Classe de saída (fade-out) para quando clicar em um link */
 body.pagina-saindo {
     opacity: 0;
     transform: translateY(-2vh);
@@ -197,7 +200,6 @@ main {
 
 .hero h1 {
     font-size: clamp(2.5rem, 6vw, 5rem);
-    /* MÁGICA: Diminui em telas menores e expande até 5rem no monitor grande */
     color: var(--cor-neon-azul);
     text-shadow: var(--glow-azul);
     margin-bottom: 1.5rem;
@@ -206,9 +208,7 @@ main {
 
 .hero p {
     font-weight: 600;
-    /* Corrigido de 2000 (valores de font-weight vão até 900) */
     font-size: clamp(1.1rem, 2vw, 1.7rem);
-    /* Fonte fluida conforme o tamanho do monitor */
     color: var(--texto-claro);
     max-width: 40rem;
     margin: 0 auto 2.5rem auto;
@@ -233,7 +233,6 @@ main {
 
 .arrow-button img {
     width: 100%;
-    /* Força a imagem a respeitar o tamanho do botão pai */
     height: 100%;
     object-fit: contain;
 }
@@ -297,7 +296,7 @@ main {
 
 .game-icons p {
     color: var(--texto-claro);
-    font-weight: 2000;
+    font-weight: 800;
     font-size: 1.7rem;
     color: var(--texto-claro);
     width: 500px;
@@ -355,6 +354,7 @@ main {
     height: 100%;
 }
 
+/* Seção final: mensagem institucional e botão de retorno ao topo */
 .final {
     width: 100%;
     min-height: 100vh;
@@ -409,6 +409,7 @@ main {
     transform: translateY(-2px);
 }
 
+/* Rodapé: informações de copyright e links de navegação */
 footer {
     width: 100%;
     background: var(--bg-roxo-translucido);
@@ -455,9 +456,6 @@ footer {
 }
 
 
-/* ==========================================================================
-   MÍDIA 1024px
-   ========================================================================== */
 @media screen and (max-width: 1024px) {
     header {
         padding: 12px 20px;
@@ -476,13 +474,11 @@ footer {
         margin-left: 0;
         padding: 20px;
         width: 100%;
-        /* Garante que ocupe a tela direito */
     }
 
     .game-icons p {
         width: 90%;
         max-width: 500px;
-        /* Altera de largura fixa para largura máxima fluida */
         margin: 0 auto;
     }
 
@@ -500,9 +496,6 @@ footer {
     }
 }
 
-/* ==========================================================================
-   MÍDIA 768px (ONDE ESTAVA O PROBLEMA)
-   ========================================================================== */
 @media screen and (max-width: 768px) {
     header {
         height: auto;
@@ -513,7 +506,6 @@ footer {
         padding: 15px;
     }
 
-    /* Esconde apenas os ícones normais, mantém o user-icon visível */
     header .icons {
         display: none !important;
     }
@@ -534,7 +526,6 @@ footer {
         font-size: 1.2rem;
     }
 
-    /* Hero colado no topo */
     .hero {
         margin-top: -30vh;
         padding-top: 2rem;
@@ -546,23 +537,19 @@ footer {
         max-width: 300px;
     }
 
-    /* CORREÇÃO DO TEXTO E DOS ÍCONES QUE ESTOURARAM nos prints */
     .game-icons {
         width: 100%;
         max-width: 100%;
         padding: 10px;
         overflow: hidden;
-        /* Evita que o conteúdo force rolagem para o lado */
     }
 
     .game-icons h2 {
         font-size: 2.5rem;
-        /* Ajustado para não estourar no celular */
         margin-bottom: 10px;
         text-align: center;
     }
 
-    /* ARRUMA OS ÍCONES: Cria um grid/flex para os logos dos jogos não isolarem o CS */
     .game-icons div,
     .game-icons .container-logos {
         display: flex;
@@ -574,12 +561,10 @@ footer {
 
     .game-icons p {
         width: 100% !important;
-        /* Sobrescreve os 500px fixos que quebraram a tela */
         max-width: 90vw;
         font-size: 1.4rem;
         padding: 0 10px;
         display: block;
-        /* Tira o flex que desalinhava o texto */
         text-align: center;
     }
 
@@ -605,9 +590,6 @@ footer {
     }
 }
 
-/* ==========================================================================
-   MÍDIA 480px
-   ========================================================================== */
 @media screen and (max-width: 480px) {
     .logo {
         width: 18vh;
@@ -630,6 +612,5 @@ footer {
         padding: 20px;
         border-width: 3px;
         width: 95%;
-        /* Garante que caiba em telas muito pequenas */
     }
 }

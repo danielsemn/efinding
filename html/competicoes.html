@@ -7,18 +7,19 @@
     <title>E-Finding: Conexão Gamer</title>
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/aditional.css">
-    <script src="../js/main.js" defer>
-    </script>
+    <script src="../js/main.js" defer></script>
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
 </head>
 
 <body>
+    <!-- Página de competições: navegação e ações para divulgar, inscrever e encontrar torneios -->
     <div class="background-competicoes">
+        <!-- Cabeçalho específico da página de competições -->
         <header>
             <a href="../index.html"><img src="/img/logo.svg" alt="Logo da empresa" class="logo-competicoes"></a>
 
             <div>
-                <a href="#" class="principal-vazado">COMPETIÇÕES</a>
+                <a href="#" class="principal-vazado" onclick="voltaTudo()">COMPETIÇÕES</a>
             </div>
 
             <ul>
@@ -30,40 +31,97 @@
             </ul>
         </header>
 
+        <!-- Menu principal da página: botões de ação para o usuário -->
         <main class="main-competicoes">
-            <div>
-                <button id="divulgar">
+            <div class="ativo">
+                <button id="divulgar" onclick="mostraFormulario('secao-divulgar')">
                     <span class="principal-vazado">DIVULGAR SUA COMPETIÇÃO</span>
                 </button>
             </div>
-            <div>
+            <div class="ativo">
                 <button id="time">
                     <span class="principal-vazado">INSCREVA O SEU TIME</span>
                 </button>
             </div>
-            <div>
+            <div class="ativo">
                 <button id="encontre">
                     <span class="principal-vazado">ENCONTRAR UM TIME</span>
                 </button>
             </div>
-            <div>
-                <button id="assista">
-                    <span class="principal-vazado">ASSISTIR</span>
-                </button>
+            <div class="ativo">
+                <a href="https://www.twitch.tv/efinding" target="_blank">
+                    <button id="assista">
+                        <span class="principal-vazado"> ASSISTIR</span>
+                    </button>
+                </a>
             </div>
         </main>
 
+        <!-- Rodapé da página de competições -->
         <footer>
             <div class="footer-content">
                 <p>© 2026 E-Finding</p>
                 <div class="footer-links">
-                    <a href="https://www.youtube.com/shorts/ei_2rfHyqCU" target="blank">Instagram</a>
-                    <a href="https://www.youtube.com/shorts/ei_2rfHyqCU" target="blank">Discord</a>
-                    <a href="https://www.youtube.com/shorts/ei_2rfHyqCU" target="blank">Contato</a>
+                    <a href="https://www.youtube.com/shorts/ei_2rfHyqCU" target="_blank">Instagram</a>
+                    <a href="https://www.youtube.com/shorts/ei_2rfHyqCU" target="_blank">Discord</a>
+                    <a href="https://www.youtube.com/shorts/ei_2rfHyqCU" target="_blank">Contato</a>
                 </div>
             </div>
         </footer>
 
-</body>
+        <!-- Modal/formulário para divulgar uma competição -->
+        <section id="secao-divulgar" class="secao-conteudo">
+            <div class="form-container">
+                <button type="button" class="btn-fechar" onclick="fecharFormulario('secao-divulgar')">&times;</button>
+                
+                <h2>Divulgar sua Competição</h2>
+                <p>Preencha os dados do torneio. A nossa equipe irá validar as informações antes da publicação.</p>
 
+                <form id="form-competicao" onsubmit="alert('Torneio enviado para análise dos administradores!'); fecharFormulario('secao-divulgar'); return false;">
+
+                    <div class="input-group">
+                        <label for="nome-torneio">Nome do Torneio</label>
+                        <input type="text" id="nome-torneio" placeholder="Ex: Copa Elite e-Finding" required>
+                    </div>
+
+                    <div class="input-group-row">
+                        <div class="input-group">
+                            <label for="jogo-torneio">Selecione o Jogo</label>
+                            <select id="jogo-torneio" required>
+                                <option value="" disabled selected>Escolha o jogo...</option>
+                                <option value="lol">League of Legends</option>
+                                <option value="valorant">Valorant</option>
+                                <option value="freefire">Free Fire</option>
+                                <option value="cs">Counter Strike</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="data-torneio">Data de Início</label>
+                            <input type="date" id="data-torneio" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group-row">
+                        <div class="input-group">
+                            <label for="premiacao">Premiação (R$ ou Itens)</label>
+                            <input type="text" id="premiacao" placeholder="Ex: R$ 500,00 ou VP/RP" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="vagas-torneio">Quantidade de Vagas</label>
+                            <input type="number" id="vagas-torneio" min="2" placeholder="Ex: 16" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="link-regulamento">Link do Regulamento / Discord</label>
+                        <input type="url" id="link-regulamento" placeholder="https://discord.gg/... ou link do doc" required>
+                    </div>
+
+                    <button type="submit" class="btn-enviar">Enviar para Análise</button>
+                </form>
+            </div>
+        </section>
+    </div> </body>
 </html>
