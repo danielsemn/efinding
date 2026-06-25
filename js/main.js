@@ -12,3 +12,23 @@ function carousel() {
 
 
 setInterval(carousel, 3000);
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("pagina-carregada");
+    const links = document.querySelectorAll("a");
+
+    links.forEach(link => {
+        link.addEventListener("click", (e) => {
+            const targetUrl = link.getAttribute("href");
+            if (!targetUrl || targetUrl.startsWith("#") || link.getAttribute("target") === "_blank") {
+                return;
+            }
+
+            e.preventDefault();
+            document.body.classList.add("pagina-saindo");
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, 400);
+        });
+    });
+});
