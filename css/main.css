@@ -71,7 +71,7 @@ header {
 
 header ul {
     margin-left: auto;
-    margin-right: 4vh;
+    margin-right: 9vh;
     display: flex;
     align-items: center;
     gap: 4px;
@@ -84,7 +84,7 @@ header ul {
     height: 13vh;
 }
 
-.user-icon img{
+.user-icon img {
     width: 4vh;
     height: 4vh;
     background-color: whitesmoke;
@@ -163,9 +163,7 @@ main {
     background-color: var(--cor-neon-azul);
     padding: 0.6rem 1.2rem;
     border-radius: 20px;
-    width: 50vh;
-    /* Deixa o tamanho se adaptar ao texto */
-    min-width: 200px;
+    width: 25vh;
     margin: 0 auto 1.5rem auto;
 }
 
@@ -331,18 +329,21 @@ main {
 
 .final {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-image: url('../img/bg3.png');
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
 }
 
 .final p {
-    margin-top: 25vh;
-    width: 90vh;
+    margin-top: 5vh;
+    width: min(90vh, 90%);
     height: auto;
     font-weight: 600;
     font-size: 1.4rem;
@@ -353,10 +354,31 @@ main {
     border-width: 5px;
     border-style: double;
     border-color: #aa0000;
-
-
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.35),
         inset 0 0 10px rgba(255, 255, 255, 0.35);
+}
+
+.topo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.topo a {
+    color: var(--cor-neon-azul);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 0.75rem 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.topo a:hover {
+    color: var(--cor-texto-claro);
+    transform: translateY(-2px);
 }
 
 footer {
@@ -402,4 +424,184 @@ footer {
 .footer-links a:hover {
     color: var(--cor-texto-claro);
     opacity: 1;
+}
+
+
+/* ==========================================================================
+   MÍDIA 1024px
+   ========================================================================== */
+@media screen and (max-width: 1024px) {
+    header {
+        padding: 12px 20px;
+        margin-top: 2vh;
+    }
+
+    .games {
+        height: auto;
+        min-height: 100vh;
+        padding: 4rem 0;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .game-icons {
+        margin-left: 0;
+        padding: 20px;
+        width: 100%;
+        /* Garante que ocupe a tela direito */
+    }
+
+    .game-icons p {
+        width: 90%;
+        max-width: 500px;
+        /* Altera de largura fixa para largura máxima fluida */
+        margin: 0 auto;
+    }
+
+    .carousel {
+        width: 70vw;
+    }
+
+    .final p {
+        width: 80%;
+        padding: 30px;
+    }
+
+    .topo {
+        width: 100%;
+    }
+}
+
+/* ==========================================================================
+   MÍDIA 768px (ONDE ESTAVA O PROBLEMA)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    header {
+        height: auto;
+        flex-direction: column;
+        gap: 15px;
+        position: relative;
+        margin-top: 0;
+        padding: 15px;
+    }
+
+    /* Esconde apenas os ícones normais, mantém o user-icon visível */
+    header .icons {
+        display: none !important;
+    }
+
+    header .user-icon {
+        display: block;
+    }
+
+    header ul {
+        margin: 0 auto;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .menu-item-vazado {
+        margin-right: 0;
+        font-size: 1.2rem;
+    }
+
+    /* Hero colado no topo */
+    .hero {
+        margin-top: -30vh;
+        padding-top: 2rem;
+        min-height: 60vh;
+    }
+
+    .hero h3 {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* CORREÇÃO DO TEXTO E DOS ÍCONES QUE ESTOURARAM nos prints */
+    .game-icons {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+        overflow: hidden;
+        /* Evita que o conteúdo force rolagem para o lado */
+    }
+
+    .game-icons h2 {
+        font-size: 2.5rem;
+        /* Ajustado para não estourar no celular */
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    /* ARRUMA OS ÍCONES: Cria um grid/flex para os logos dos jogos não isolarem o CS */
+    .game-icons div,
+    .game-icons .container-logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .game-icons p {
+        width: 100% !important;
+        /* Sobrescreve os 500px fixos que quebraram a tela */
+        max-width: 90vw;
+        font-size: 1.4rem;
+        padding: 0 10px;
+        display: block;
+        /* Tira o flex que desalinhava o texto */
+        text-align: center;
+    }
+
+    .arrow-button {
+        top: auto;
+        bottom: 2vh;
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .carousel {
+        width: 90vw;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+}
+
+/* ==========================================================================
+   MÍDIA 480px
+   ========================================================================== */
+@media screen and (max-width: 480px) {
+    .logo {
+        width: 18vh;
+    }
+
+    header ul li a {
+        font-size: 1rem;
+    }
+
+    .game-icons h2 {
+        font-size: 2rem;
+    }
+
+    .game-icons p {
+        font-size: 1.1rem;
+    }
+
+    .final p {
+        font-size: 1.1rem;
+        padding: 20px;
+        border-width: 3px;
+        width: 95%;
+        /* Garante que caiba em telas muito pequenas */
+    }
 }
