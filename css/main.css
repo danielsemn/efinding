@@ -118,94 +118,103 @@ header ul li:hover {
 }
 
 main {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
-    grid-column: 1 / -1;
 }
 
 .hero {
-    height: 70vh;
-    width: calc(85vh * 16 / 9);
+    /* REMOVIDO: O cálculo rígido com base em 16/9 que quebrava em telas menores */
+    min-height: 75vh; /* Define uma altura fluida baseada na tela do usuário */
+    width: 90%; /* Ocupa a largura da tela com margem de segurança */
+    max-width: 1200px; /* Não deixa o conteúdo espalhar demais no seu monitor de 27" */
     background-color: rgba(0, 0, 0, 0.507);
-    margin-top: 10vh;
+    margin-top: 12vh; /* Respiro seguro para não colar no header fixo */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 2rem;
+    position: relative; /* Mantém a seta presa em relação à caixona do hero */
 }
 
 .hero h3 {
     color: black;
     background-color: var(--cor-neon-azul);
-    padding: 10px;
+    padding: 0.6rem 1.2rem;
     border-radius: 20px;
-    width: 250px;
-    margin: 0 auto 30px auto;
-
+    width: auto; /* Deixa o tamanho se adaptar ao texto */
+    min-width: 200px;
+    margin: 0 auto 1.5rem auto;
 }
 
 .hero h1 {
-    font-size: 5rem;
+    font-size: clamp(2.5rem, 6vw, 5rem); /* MÁGICA: Diminui em telas menores e expande até 5rem no monitor grande */
     color: var(--cor-neon-azul);
     text-shadow: var(--glow-azul);
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
 }
 
 .hero p {
-    font-weight: 2000;
-    font-size: 1.7rem;
+    font-weight: 600; /* Corrigido de 2000 (valores de font-weight vão até 900) */
+    font-size: clamp(1.1rem, 2vw, 1.7rem); /* Fonte fluida conforme o tamanho do monitor */
     color: var(--texto-claro);
-    max-width: 600px;
-    margin: 20px auto 40px auto;
-
+    max-width: 40rem;
+    margin: 0 auto 2.5rem auto;
 }
+
 
 .arrow-button {
     position: absolute;
-    bottom: 20px;
+    bottom: 1vh; /* Posiciona com base na altura da tela, não em px fixos */
     left: 50%;
+    transform: translateX(-50%); /* Centraliza perfeitamente no eixo X */
     border: none;
-    width: 40px;
-    height: 40px;
+    width: 3.5rem;
+    height: 3.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0);
-    margin-bottom: 70px;
+    background-color: transparent;
+}
+
+.arrow-button img {
+    width: 100%; /* Força a imagem a respeitar o tamanho do botão pai */
+    height: 100%;
+    object-fit: contain;
+}
+
+.arrow-button:hover {
+    /* Mantém o alinhamento central enquanto executa a animação */
+    animation: deslocarBotao 1.3s ease-in-out infinite;
 }
 
 .arrow-button a {
     text-decoration: none;
 }
 
-.arrow-button img {
-    width: 200px;
-    height: 200px;
-}
-
-.arrow-button:hover {
-    animation: deslocarBotao 1.3s ease-in-out infinite;
-}
-
 .btn-hero {
     display: inline-block;
     color: var(--cor-neon-azul);
-    padding: 15px 30px;
+    padding: 1rem 2rem; /* Unidades relativas para respiro interno */
     font-size: 1.2rem;
     text-decoration: none;
     border: none;
     border-radius: 10px;
     background-color: black;
     background-image: url('/img/bottons-svg/bordas.svg');
-    background-size: 130% 130%;
+    background-size: 100% 100%; /* Ajustado para não estourar a caixa do botão */
     background-repeat: no-repeat;
     background-position: center;
-    transition: all 0.7s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    margin-bottom: 3rem; /* Empurra a seta para baixo de forma segura */
+    z-index: 2; /* Garante que o botão fique acima de qualquer sobreposição */
 }
 
 .btn-hero:hover {
