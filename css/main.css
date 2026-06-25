@@ -22,15 +22,15 @@ html {
 /* animations */
 @keyframes deslocarBotao {
     0% {
-        transform: translateY(0);
+        transform: translateX(-50%) translateY(0);
     }
 
     50% {
-        transform: translateY(6px);
+        transform: translateX(-50%) translateY(4vh);
     }
 
     100% {
-        transform: translateY(0);
+        transform: translateX(-50%) translateY(0);
     }
 }
 
@@ -56,52 +56,68 @@ body {
 
 header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background-color: #21012e81;
     backdrop-filter: blur(1px);
-    padding: 15px 50px;
+    padding: 12px 40px;
     flex-direction: row;
     width: 100%;
-    height: 10vh;
+    height: 8vh;
     position: fixed;
     z-index: 1000;
     margin-top: 5vh;
 }
 
+header ul {
+    margin-left: auto;
+    margin-right: 4vh;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    list-style: none;
+}
+
 
 .icons img {
-    width: 150px;
-    height: 150px;
+    width: 13vh;
+    height: 13vh;
+}
+
+.user-icon img{
+    width: 4vh;
+    height: 4vh;
+    background-color: whitesmoke;
+    border-radius: 50vh;
 }
 
 .logo {
-    width: 200px;
+    width: 23vh;
     height: auto;
     background-color: var(--bg-translucido);
-    border-radius: 20px;
-    margin-right: 60px;
-    padding-right: 10px;
+    border-radius: 1.2vh;
+    margin-right: 3vh;
+    padding-right: 0.6vh;
     margin-left: 2vh;
-    padding-left: 10px;
+    padding-left: 0.6vh;
 }
 
 header ul {
+    margin-left: auto;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0.5vh;
     list-style: none;
 }
 
 header ul li {
-    margin: 0 10px;
     transition: transform 0.3s ease-in-out;
 }
 
 header ul li a {
     text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 1.2rem;
+    font-weight: 300;
 }
 
 header ul li:hover {
@@ -110,8 +126,8 @@ header ul li:hover {
 
 .menu-item-vazado {
     font-family: 'Open Sans', sans-serif;
-    font-weight: 1000;
-    font-size: 2.5rem;
+    font-weight: 800;
+    font-size: 1.5rem;
     color: transparent;
     -webkit-text-stroke: 2px var(--cor-texto-claro);
     margin-right: 2rem;
@@ -127,19 +143,19 @@ main {
 }
 
 .hero {
-    /* REMOVIDO: O cálculo rígido com base em 16/9 que quebrava em telas menores */
-    min-height: 75vh; /* Define uma altura fluida baseada na tela do usuário */
-    width: 90%; /* Ocupa a largura da tela com margem de segurança */
-    max-width: 1200px; /* Não deixa o conteúdo espalhar demais no seu monitor de 27" */
+
+    min-height: 75vh;
+    width: 90%;
+    max-width: 1200px;
     background-color: rgba(0, 0, 0, 0.507);
-    margin-top: 12vh; /* Respiro seguro para não colar no header fixo */
+    margin-top: 12vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 2rem;
-    position: relative; /* Mantém a seta presa em relação à caixona do hero */
+    position: relative;
 }
 
 .hero h3 {
@@ -147,13 +163,15 @@ main {
     background-color: var(--cor-neon-azul);
     padding: 0.6rem 1.2rem;
     border-radius: 20px;
-    width: auto; /* Deixa o tamanho se adaptar ao texto */
+    width: 50vh;
+    /* Deixa o tamanho se adaptar ao texto */
     min-width: 200px;
     margin: 0 auto 1.5rem auto;
 }
 
 .hero h1 {
-    font-size: clamp(2.5rem, 6vw, 5rem); /* MÁGICA: Diminui em telas menores e expande até 5rem no monitor grande */
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    /* MÁGICA: Diminui em telas menores e expande até 5rem no monitor grande */
     color: var(--cor-neon-azul);
     text-shadow: var(--glow-azul);
     margin-bottom: 1.5rem;
@@ -161,8 +179,10 @@ main {
 }
 
 .hero p {
-    font-weight: 600; /* Corrigido de 2000 (valores de font-weight vão até 900) */
-    font-size: clamp(1.1rem, 2vw, 1.7rem); /* Fonte fluida conforme o tamanho do monitor */
+    font-weight: 600;
+    /* Corrigido de 2000 (valores de font-weight vão até 900) */
+    font-size: clamp(1.1rem, 2vw, 1.7rem);
+    /* Fonte fluida conforme o tamanho do monitor */
     color: var(--texto-claro);
     max-width: 40rem;
     margin: 0 auto 2.5rem auto;
@@ -171,12 +191,13 @@ main {
 
 .arrow-button {
     position: absolute;
-    bottom: 1vh; /* Posiciona com base na altura da tela, não em px fixos */
+    bottom: 1vh;
+    top: 62vh;
     left: 50%;
-    transform: translateX(-50%); /* Centraliza perfeitamente no eixo X */
+    transform: translateX(-50%);
     border: none;
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 8.5rem;
+    height: 8.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -185,13 +206,13 @@ main {
 }
 
 .arrow-button img {
-    width: 100%; /* Força a imagem a respeitar o tamanho do botão pai */
+    width: 100%;
+    /* Força a imagem a respeitar o tamanho do botão pai */
     height: 100%;
     object-fit: contain;
 }
 
 .arrow-button:hover {
-    /* Mantém o alinhamento central enquanto executa a animação */
     animation: deslocarBotao 1.3s ease-in-out infinite;
 }
 
@@ -202,19 +223,19 @@ main {
 .btn-hero {
     display: inline-block;
     color: var(--cor-neon-azul);
-    padding: 1rem 2rem; /* Unidades relativas para respiro interno */
+    padding: 1rem 2rem;
     font-size: 1.2rem;
     text-decoration: none;
     border: none;
     border-radius: 10px;
     background-color: black;
     background-image: url('/img/bottons-svg/bordas.svg');
-    background-size: 100% 100%; /* Ajustado para não estourar a caixa do botão */
+    background-size: 125% 125%;
     background-repeat: no-repeat;
     background-position: center;
     transition: all 0.5s ease-in-out;
-    margin-bottom: 3rem; /* Empurra a seta para baixo de forma segura */
-    z-index: 2; /* Garante que o botão fique acima de qualquer sobreposição */
+    margin-bottom: 3rem;
+
 }
 
 .btn-hero:hover {
@@ -225,7 +246,7 @@ main {
 .games {
     width: 100%;
     height: 100vh;
-    background-color: var(--bg-translucido);
+    background: linear-gradient(to top, black, rgb(48, 9, 48), black);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -269,8 +290,7 @@ main {
 }
 
 .game-icons img {
-    width: 190px;
-    height: 190px;
+    width: 20vh;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -281,10 +301,11 @@ main {
 .carousel {
     box-shadow: 0 0 10px var(--cor-neon-azul);
     position: relative;
-    width: 800px;
-    height: 450px;
+    width: 80vh;
+    height: auto;
     overflow: hidden;
     border-radius: 10px;
+    aspect-ratio: 16/9;
 }
 
 .container a {
@@ -320,15 +341,15 @@ main {
 }
 
 .final p {
-    width: 800px;
-    font-weight: 800;
-    font-size: 1.7rem;
+    margin-top: 25vh;
+    width: 90vh;
+    height: auto;
+    font-weight: 600;
+    font-size: 1.4rem;
     color: var(--texto-claro);
     background-color: var(--bg-roxo-translucido);
     padding: 50px;
     text-align: center;
-
-
     border-width: 5px;
     border-style: double;
     border-color: #aa0000;
