@@ -84,7 +84,7 @@ header div:hover {
     transform: scale(1.05);
 }
 
-/* Layout da página de competições: grade de botões de ação */
+
 .main-competicoes {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -171,7 +171,7 @@ header div:hover {
     background: linear-gradient(to top, black, rgb(48, 9, 48), black);
 }
 
-/* Modal/overlay para exibir formulários e conteúdo complementar */
+
 .secao-conteudo {
     display: none;
     position: fixed;
@@ -191,7 +191,7 @@ header div:hover {
     animation: fadeIn 0.3s ease-in-out;
 }
 
-/* Estilização do formulário de divulgação de competições */
+
 .form-container {
     position: relative !important;
     width: 90%;
@@ -316,5 +316,211 @@ header div:hover {
     .input-group-row {
         flex-direction: column;
         gap: 0;
+    }
+}
+
+
+/*Personalização da página modalidades*/
+
+#league-of-legends {
+    background-image: url(../img/carousel/lol.jpg);
+}
+
+#valorant {
+    background-image: url(../img/carousel/valorant.jpg)
+}
+
+#free-fire {
+    background-image: url(../img/carousel/freefire.jpg)
+}
+
+#counter-strike {
+    background-image: url(../img/carousel/cs.jpg)
+}
+
+.layout-torneios {
+    max-width: 850px !important;
+}
+
+.grid-torneios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.card-torneio {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+
+.card-torneio.ativo-vagas {
+    border-color: var(--cor-neon-azul);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.1);
+}
+
+.card-torneio:hover {
+    transform: translateY(-5px);
+}
+
+.card-torneio h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 1rem 0 0.5rem 0;
+}
+
+.info-torneio p {
+    text-align: left !important;
+    margin-bottom: 0.4rem !important;
+    font-size: 0.9rem;
+}
+
+
+.badge-status {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.badge-status.aberto {
+    background-color: #00ff66;
+    color: #000;
+}
+
+.badge-status.finalizado {
+    background-color: #ff0055;
+    color: #fff;
+}
+
+
+.vencedor {
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+
+.card-torneio .btn-enviar {
+    margin-top: 1rem !important;
+    width: 100% !important;
+    font-size: 0.85rem !important;
+    height: 35px !important;
+    line-height: 35px !important;
+}
+
+@media screen and (max-width: 1024px) {
+    .main-competicoes {
+        max-width: 90%;
+        margin-top: 18vh;
+        gap: 2rem;
+    }
+
+    .main-competicoes button {
+        height: 25vh;
+        
+    }
+
+    .layout-torneios {
+        max-width: 90% !important;
+        
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .main-competicoes {
+        grid-template-columns: 1fr;
+        
+        margin-top: 5vh;
+        min-height: auto;
+        gap: 1.5rem;
+    }
+
+    .main-competicoes button {
+        width: 100%;
+        max-width: 500px;
+        height: 22vh;
+    }
+
+    
+    .secao-conteudo {
+        align-items: flex-start;
+        padding: 2rem 1rem;
+        overflow-y: auto;
+        
+    }
+
+    .form-container {
+        margin-top: auto;
+        margin-bottom: auto;
+        padding: 2rem 1.5rem 1.5rem 1.5rem;
+    }
+
+    .form-container h2 {
+        font-size: 1.5rem;
+    }
+
+    
+    .grid-torneios {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .card-torneio {
+        padding: 1.2rem;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .principal-vazado {
+        font-size: 1.4rem;
+        -webkit-text-stroke: 1px var(--cor-texto-claro);
+        
+    }
+
+    .main-competicoes button span,
+    .main-competicoes button p,
+    .main-competicoes button .principal-vazado {
+        font-size: 1.2rem;
+        -webkit-text-stroke: 1px var(--cor-texto-claro);
+        padding: 10px 0;
+    }
+
+    .input-group-row {
+        flex-direction: column;
+        
+        gap: 0;
+    }
+
+    .input-group input,
+    .input-group select {
+        padding: 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    
+    .btn-enviar {
+        height: 45px !important;
+        line-height: 45px !important;
+        font-size: 0.9rem !important;
+    }
+
+    .btn-fechar {
+        font-size: 1.7rem !important;
+        top: 15px !important;
+        right: 15px !important;
     }
 }

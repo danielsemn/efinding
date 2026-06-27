@@ -7,7 +7,7 @@
     <title>E-Finding: Conexão Gamer</title>
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/aditional.css">
-    <script src="../js/main.js" defer></script>
+    <script src="../js/animation.js" defer></script>
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
 </head>
 
@@ -38,15 +38,17 @@
                     <span class="principal-vazado">DIVULGAR SUA COMPETIÇÃO</span>
                 </button>
             </div>
-            <div class="ativo">
-                <button id="time">
-                    <span class="principal-vazado">INSCREVA O SEU TIME</span>
-                </button>
+            <div class="ativo"> <a href="modalidades.html">
+                    <button id="time">
+                        <span class="principal-vazado">INSCREVA O SEU TIME</span>
+                    </button>
+                </a>
             </div>
-            <div class="ativo">
+            <div class="ativo"><a href="encontrar-times.html">
                 <button id="encontre">
                     <span class="principal-vazado">ENCONTRAR UM TIME</span>
                 </button>
+                </a>
             </div>
             <div class="ativo">
                 <a href="https://www.twitch.tv/efinding" target="_blank">
@@ -73,11 +75,12 @@
         <section id="secao-divulgar" class="secao-conteudo">
             <div class="form-container">
                 <button type="button" class="btn-fechar" onclick="fecharFormulario('secao-divulgar')">&times;</button>
-                
+
                 <h2>Divulgar sua Competição</h2>
                 <p>Preencha os dados do torneio. A nossa equipe irá validar as informações antes da publicação.</p>
 
-                <form id="form-competicao" onsubmit="alert('Torneio enviado para análise dos administradores!'); fecharFormulario('secao-divulgar'); return false;">
+                <form id="form-competicao"
+                    onsubmit="alert('Torneio enviado para análise dos administradores!'); fecharFormulario('secao-divulgar'); return false;">
 
                     <div class="input-group">
                         <label for="nome-torneio">Nome do Torneio</label>
@@ -116,12 +119,15 @@
 
                     <div class="input-group">
                         <label for="link-regulamento">Link do Regulamento / Discord</label>
-                        <input type="url" id="link-regulamento" placeholder="https://discord.gg/... ou link do doc" required>
+                        <input type="url" id="link-regulamento" placeholder="https://discord.gg/... ou link do doc"
+                            required>
                     </div>
 
                     <button type="submit" class="btn-enviar">Enviar para Análise</button>
                 </form>
             </div>
         </section>
-    </div> </body>
+    </div>
+</body>
+
 </html>

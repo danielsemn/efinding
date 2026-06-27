@@ -58,3 +58,7 @@ function fecharFormulario(idSecao) {
     document.getElementById(idSecao).classList.remove('ativo');
     voltaTudo();
 }
+
+function versaoIncompleta(){
+    alert('Funcionalidade de filtro global por modalidade será implementada na Versão 2.0. Por favor, utilize o menu >"ENCONTRAR TIMES E COMPETIÇÕES"< abaixo.');
+}

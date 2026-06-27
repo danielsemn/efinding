@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Finding: Encontrar um Time</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/aditional.css">
+    <script src="../js/animation.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+</head>
+
+<body>
+    <div class="background-competicoes">
+        <header>
+            <a href="../index.html"><img src="../img/logo.svg" alt="Logo da empresa" class="logo-competicoes"></a>
+
+            <div>
+                <a href="competicoes.html" class="principal-vazado">VOLTAR</a>
+            </div>
+
+            <div>
+                <a href="#" class="principal-vazado" onclick="voltaTudo()">ESCOLHA O SEU JOGO:</a>
+            </div>
+
+            <ul>
+                <li>
+                    <a href="#" class="user-icon">
+                        <img src="../img/bottons-svg/user-icon.svg" alt="Ícone de usuário">
+                    </a>
+                </li>
+            </ul>
+        </header>
+
+        <main class="main-competicoes">
+            <div class="ativo">
+                <button id="league-of-legends" onclick="mostraFormulario('secao-recrutar-lol')">
+                    <span class="principal-vazado">LEAGUE OF LEGENDS</span>
+                </button>
+            </div>
+            <div class="ativo">
+                <button id="valorant" onclick="mostraFormulario('secao-recrutar-val')">
+                    <span class="principal-vazado">VALORANT</span>
+                </button>
+            </div>
+            <div class="ativo">
+                <button id="free-fire" onclick="mostraFormulario('secao-recrutar-ff')">
+                    <span class="principal-vazado">FREE FIRE</span>
+                </button>
+            </div>
+            <div class="ativo">
+                <button id="counter-strike" onclick="mostraFormulario('secao-recrutar-cs')">
+                    <span class="principal-vazado"> COUNTER STRIKE</span>
+                </button>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>© 2026 E-Finding</p>
+                <div class="footer-links">
+                    <a href="https://www.youtube.com/shorts/ei_2rfHyqCU" target="_blank">Instagram</a>
+                    <a href="https://www.youtube.com/shorts/ei_2rfHyqCU" target="_blank">Discord</a>
+                    <a href="https://www.youtube.com/shorts/ei_2rfHyqCU" target="_blank">Contato</a>
+                </div>
+            </div>
+        </footer>
+
+        <section id="secao-recrutar-lol" class="secao-conteudo">
+            <div class="form-container layout-torneios">
+                <button type="button" class="btn-fechar" onclick="fecharFormulario('secao-recrutar-lol')">&times;</button>
+
+                <h2>Recrutamento League of Legends</h2>
+                <p>Encontre vagas disponíveis em equipes ou monte seu duo/squad.</p>
+
+                <div class="grid-torneios">
+                    <div class="card-torneio ativo-vagas">
+                        <div class="badge-status aberto">Procura-se: SUPORTE</div>
+                        <h3>CNB Esports Amadora</h3>
+                        <div class="info-torneio">
+                            <p><strong>Elo Médio:</strong> Diamante / Mestre</p>
+                            <p><strong>Foco:</strong> Treinos semanais e Copa Quebrada</p>
+                            <p><strong>Requisito:</strong> Ter microfone e boa comunicação</p>
+                        </div>
+                        <button class="btn-enviar" onclick="alert('Candidatura enviada ao capitão da equipe!');">Candidatar-se</button>
+                    </div>
+
+                    <div class="card-torneio ativo-vagas">
+                        <div class="badge-status aberto">Procura-se: MID LANER</div>
+                        <h3>Team Nexus Academy</h3>
+                        <div class="info-torneio">
+                            <p><strong>Elo Médio:</strong> Platina / Esmeralda</p>
+                            <p><strong>Foco:</strong> Campeonatos de final de semana</p>
+                            <p><strong>Requisito:</strong> Disponibilidade à noite</p>
+                        </div>
+                        <button class="btn-enviar" onclick="alert('Candidatura enviada ao capitão da equipe!');">Candidatar-se</button>
+                    </div>
+
+                    <div class="card-torneio shattered" style="opacity: 0.6;">
+                        <div class="badge-status finalizado">Vaga Preenchida</div>
+                        <h3>Painzinho da Quebrada</h3>
+                        <div class="info-torneio">
+                            <p><strong>Elo Médio:</strong> Ouro / Platina</p>
+                            <p><strong>Vaga Antiga:</strong> Atirador (ADC)</p>
+                            <p class="vencedor"><strong>🏆 Recrutado:</strong> PlayerX_BR</p>
+                        </div>
+                        <button class="btn-enviar" disabled style="background: #444; color: #aaa; box-shadow: none; cursor: not-allowed;">PREENCHIDA</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="secao-recrutar-val" class="secao-conteudo">
+            <div class="form-container layout-torneios">
+                <button type="button" class="btn-fechar" onclick="fecharFormulario('secao-recrutar-val')">&times;</button>
+
+                <h2>Recrutamento Valorant</h2>
+                <p>Encontre agentes solos ou alinhe sua mira com um novo time.</p>
+
+                <div class="grid-torneios">
+                    <div class="card-torneio ativo-vagas">
+                        <div class="badge-status aberto">Procura-se: INICIADOR</div>
+                        <h3>Spike Force Team</h3>
+                        <div class="info-torneio">
+                            <p><strong>Rank Médio:</strong> Imortal</p>
+                            <p><strong>Foco:</strong> VCT Amador e Open Spikes</p>
+                            <p><strong>Requisito:</strong> Main Sova / Fade / Gekko</p>
+                        </div>
+                        <button class="btn-enviar" onclick="alert('Candidatura enviada ao capitão da equipe!');">Candidatar-se</button>
+                    </div>
+
+                    <div class="card-torneio ativo-vagas">
+                        <div class="badge-status aberto">Procura-se: CONTROLADOR</div>
+                        <h3>Line 100 Noção</h3>
+                        <div class="info-torneio">
+                            <p><strong>Rank Médio:</strong> Ouro / Platina</p>
+                            <p><strong>Foco:</strong> Subir rank no Competitivo</p>
+                            <p><strong>Requisito:</strong> Saber os Smokes padrão</p>
+                        </div>
+                        <button class="btn-enviar" onclick="alert('Candidatura enviada ao capitão da equipe!');">Candidatar-se</button>
+                    </div>
+
+                    <div class="card-torneio shattered" style="opacity: 0.6;">
+                        <div class="badge-status finalizado">Vaga Preenchida</div>
+                        <h3>Galos Atômicos</h3>
+                        <div class="info-torneio">
+                            <p><strong>Rank Médio:</strong> Ascendente</p>
+                            <p><strong>Vaga Antiga:</strong> Duelista (Main Jett)</p>
+                            <p class="vencedor"><strong>🏆 Recrutado:</strong> MwZera_Fake</p>
+                        </div>
+                        <button class="btn-enviar" disabled style="background: #444; color: #aaa; box-shadow: none; cursor: not-allowed;">PREENCHIDA</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="secao-recrutar-ff" class="secao-conteudo">
+            <div class="form-container layout-torneios">
+                <button type="button" class="btn-fechar" onclick="fecharFormulario('secao-recrutar-ff')">&times;</button>
+
+                <h2>Recrutamento Free Fire</h2>
+                <p>Guildas ativas recrutando linhas de frente ou suportes de elite.</p>
+
+                <div class="grid-torneios">
+                    <div class="card-torneio ativo-vagas">
+                        <div class="badge-status aberto">Procura-se: CAPITÃO / RUSH</div>
+                        <h3>Guilda Os Crias do Capa</h3>
+                        <div class="info-torneio">
+                            <p><strong>Nível Mínimo:</strong> 60+ / Taxa HS alta</p>
+                            <p><strong>Foco:</strong> Diários e Copas e-Finding</p>
+                            <p><strong>Requisito:</strong> Ter call ativa e visão de jogo</p>
+                        </div>
+                        <button class="btn-enviar" onclick="alert('Candidatura enviada ao capitão da equipe!');">Candidatar-se</button>
+                    </div>
+
+                    <div class="card-torneio ativo-vagas">
+                        <div class="badge-status aberto">Procura-se: SUPORTE AWP</div>
+                        <h3>Alfa Squad Mobile</h3>
+                        <div class="info-torneio">
+                            <p><strong>Nível Mínimo:</strong> 55+</p>
+                            <p><strong>Foco:</strong> Ranqueada Guildas</p>
+                            <p><strong>Requisito:</strong> Dominar double Barrett / AWM</p>
+                        </div>
+                        <button class="btn-enviar" onclick="alert('Candidatura enviada ao capitão da equipe!');">Candidatar-se</button>
+                    </div>
+
+                    <div class="card-torneio shattered" style="opacity: 0.6;">
+                        <div class="badge-status finalizado">Vaga Preenchida</div>
+                        <h3>Bando de Loucos FF</h3>
+                        <div class="info-torneio">
+                            <p><strong>Nível Mínimo:</strong> 65+</p>
+                            <p><strong>Vaga Antiga:</strong> Rush de Doze</p>
+                            <p class="vencedor"><strong>🏆 Recrutado:</strong> Nobru_Do_Bairro</p>
+                        </div>
+                        <button class="btn-enviar" disabled style="background: #444; color: #aaa; box-shadow: none; cursor: not-allowed;">PREENCHIDA</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="secao-recrutar-cs" class="secao-conteudo">
+            <div class="form-container layout-torneios">
+                <button type="button" class="btn-fechar" onclick="fecharFormulario('secao-recrutar-cs')">&times;</button>
+
+                <h2>Recrutamento Counter Strike</h2>
+                <p>Entre em lines competitivas de CS2 ou feche seu lobby.</p>
+
+                <div class="grid-torneios">
+                    <div class="card-torneio ativo-vagas">
+                        <div class="badge-status aberto">Procura-se: AWPER</div>
+                        <h3>Made In Quebrada (MIQ)</h3>
+                        <div class="info-torneio">
+                            <p><strong>Level Gamers Club:</strong> 18 - 20</p>
+                            <p><strong>Foco:</strong> Liga Prata e Qualificatórias</p>
+                            <p><strong>Requisito:</strong> Domínio de pixel e entry sniper</p>
+                        </div>
+                        <button class="btn-enviar" onclick="alert('Candidatura enviada ao capitão da equipe!');">Candidatar-se</button>
+                    </div>
+
+                    <div class="card-torneio ativo-vagas">
+                        <div class="badge-status aberto">Procura-se: LURKER / ENTRY</div>
+                        <h3>Clutch Masters</h3>
+                        <div class="info-torneio">
+                            <p><strong>Level Gamers Club:</strong> 12 - 15</p>
+                            <p><strong>Foco:</strong> Campeonatos de final de semana</p>
+                            <p><strong>Requisito:</strong> Decorar utilitários (Smokes e Flash)</p>
+                        </div>
+                        <button class="btn-enviar" onclick="alert('Candidatura enviada ao capitão da equipe!');">Candidatar-se</button>
+                    </div>
+
+                    <div class="card-torneio shattered" style="opacity: 0.6;">
+                        <div class="badge-status finalizado">Vaga Preenchida</div>
+                        <h3>Os Desprezados de Mirage</h3>
+                        <div class="info-torneio">
+                            <p><strong>Level Gamers Club:</strong> 16</p>
+                            <p><strong>Vaga Antiga:</strong> IGL (Capitão da Line)</p>
+                            <p class="vencedor"><strong>🏆 Recrutado:</strong> Fallen_Da_Zl</p>
+                        </div>
+                        <button class="btn-enviar" disabled style="background: #444; color: #aaa; box-shadow: none; cursor: not-allowed;">PREENCHIDA</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Finding: Conexão Gamer</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/aditional.css">
+    <script src="../js/animation.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+</head>
+
+<body>
+    <!-- Página de competições: navegação e ações para divulgar, inscrever e encontrar torneios -->
+    <div class="background-competicoes">
+        <!-- Cabeçalho específico da página de competições -->
+        <header>
+            <a href="../index.html"><img src="../img/logo.svg" alt="Logo da empresa" class="logo-competicoes"></a>
+
+
+            <div>
+                <a href="competicoes.html" class="principal-vazado">VOLTAR</a>
+            </div>
+
+
+            <div>
+                <a href="#" class="principal-vazado" onclick="voltaTudo()">ESCOLHA SUA MODALIDADE:</a>
+            </div>
+
+            <ul>
+                <li>
+                    <a href="#" class="user-icon">
+                        <img src="../img/bottons-svg/user-icon.svg" alt="Ícone de usuário">
+                    </a>
+                </li>
+            </ul>
+        </header>
+
+        <!-- Menu principal da página: botões de ação para o usuário -->
+        <main class="main-competicoes">
+            <div class="ativo">
+                <button id="league-of-legends" onclick="mostraFormulario('secao-competir-lol')">
+                    <span class="principal-vazado">LEAGUE OF LEGENDS</span>
+                </button>
+            </div>
+            <div class="ativo">
+                <button id="valorant" onclick="mostraFormulario('secao-competir-val')">
+                    <span class="principal-vazado">VALORANT</span>
+                </button>
+            </div>
+            <div class="ativo">
+                <button id="free-fire" onclick="mostraFormulario('secao-competir-ff')">
+                    <span class="principal-vazado">FREE FIRE</span>
+                </button>
+            </div>
+            <div class="ativo">
+                <button id="counter-strike" onclick="mostraFormulario('secao-competir-cs')">
+                    <span class="principal-vazado"> COUNTER STRIKE</span>
+                </button>
+            </div>
+        </main>
+
+        <!-- Rodapé da página de competições -->
+        <footer>
+            <div class="footer-content">
+                <p>© 2026 E-Finding</p>
+                <div class="footer-links">
+                    <a href="https://www.youtube.com/shorts/ei_2rfHyqCU" target="_blank">Instagram</a>
+                    <a href="https://www.youtube.com/shorts/ei_2rfHyqCU" target="_blank">Discord</a>
+                    <a href="https://www.youtube.com/shorts/ei_2rfHyqCU" target="_blank">Contato</a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- ==========================================================================
+             MODAIS DE TORNEIOS (ISOLADOS NO FINAL DO BODY)
+             ========================================================================== -->
+
+        <!-- SECTION: LEAGUE OF LEGENDS -->
+        <section id="secao-competir-lol" class="secao-conteudo">
+            <div class="form-container layout-torneios">
+                <button type="button" class="btn-fechar"
+                    onclick="fecharFormulario('secao-competir-lol')">&times;</button>
+
+                <h2>Torneios de League of Legends</h2>
+                <p>Confira os campeonatos ativos e o Hall da Fama dos encerrados.</p>
+
+                <div class="grid-torneios">
+                    <div class="card-torneio ativo-vagas">
+                        <div class="badge-status aberto">Inscrições Abertas</div>
+                        <h3>Copa Quebrada Summoners</h3>
+                        <div class="info-torneio">
+                            <p><strong>Data:</strong> 15/07/2026</p>
+                            <p><strong>Vagas:</strong> 12 / 16 times</p>
+                            <p><strong>Premiação:</strong> R$ 500,00 + 5000 RP</p>
+                        </div>
+                        <button class="btn-enviar"
+                            onclick="alert('Inscrição do time realizada com sucesso!');">Inscrever Meu Time</button>
+                    </div>
+
+                    <div class="card-torneio ativo-vagas">
+                        <div class="badge-status aberto">Inscrições Abertas</div>
+                        <h3>Liga Elite Nexo Brilhante</h3>
+                        <div class="info-torneio">
+                            <p><strong>Data:</strong> 22/07/2026</p>
+                            <p><strong>Vagas:</strong> 4 / 8 times</p>
+                            <p><strong>Premiação:</strong> R$ 300,00</p>
+                        </div>
+                        <button class="btn-enviar"
+                            onclick="alert('Inscrição do time realizada com sucesso!');">Inscrever Meu Time</button>
+                    </div>
+
+                    <div class="card-torneio encerrado">
+                        <div class="badge-status finalizado">Encerrado</div>
+                        <h3>Masters de Runeterra - Edição #1</h3>
+                        <div class="info-torneio">
+                            <p><strong>Data:</strong> 10/06/2026</p>
+                            <p><strong>Vagas:</strong> Encerradas (16/16)</p>
+                            <p class="vencedor"><strong>🏆 CAMPEÃO:</strong> LOUD da Quebrada</p>
+                        </div>
+                        <button class="btn-enviar" disabled
+                            style="background: #444; color: #aaa; box-shadow: none; cursor: not-allowed;">ENCERRADO</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: VALORANT -->
+        <section id="secao-competir-val" class="secao-conteudo">
+            <div class="form-container layout-torneios">
+                <button type="button" class="btn-fechar"
+                    onclick="fecharFormulario('secao-competir-val')">&times;</button>
+
+                <h2>Torneios de Valorant</h2>
+                <p>Confira os campeonatos ativos e o Hall da Fama dos encerrados.</p>
+
+                <div class="grid-torneios">
+                    <div class="card-torneio ativo-vagas">
+                        <div class="badge-status aberto">Inscrições Abertas</div>
+                        <h3>Open Spike SpikeStrike</h3>
+                        <div class="info-torneio">
+                            <p><strong>Data:</strong> 18/07/2026</p>
+                            <p><strong>Vagas:</strong> 8 / 16 teams</p>
+                            <p><strong>Premiação:</strong> R$ 400,00 + VP</p>
+                        </div>
+                        <button class="btn-enviar"
+                            onclick="alert('Inscrição do time realizada com sucesso!');">Inscrever Meu Time</button>
+                    </div>
+
+                    <div class="card-torneio ativo-vagas">
+                        <div class="badge-status aberto">Inscrições Abertas</div>
+                        <h3>Challenger das Favelas</h3>
+                        <div class="info-torneio">
+                            <p><strong>Data:</strong> 29/07/2026</p>
+                            <p><strong>Vagas:</strong> 2 / 8 teams</p>
+                            <p><strong>Premiação:</strong> R$ 250,00</p>
+                        </div>
+                        <button class="btn-enviar"
+                            onclick="alert('Inscrição do time realizada com sucesso!');">Inscrever Meu Time</button>
+                    </div>
+
+                    <div class="card-torneio encerrado">
+                        <div class="badge-status finalizado">Encerrado</div>
+                        <h3>First Strike Amador - Edição #1</h3>
+                        <div class="info-torneio">
+                            <p><strong>Data:</strong> 05/06/2026</p>
+                            <p><strong>Vagas:</strong> Encerradas (16/16)</p>
+                            <p class="vencedor"><strong>🏆 CAMPEÃO:</strong> Vactors Gaming</p>
+                        </div>
+                        <button class="btn-enviar" disabled
+                            style="background: #444; color: #aaa; box-shadow: none; cursor: not-allowed;">ENCERRADO</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: FREE FIRE -->
+        <section id="secao-competir-ff" class="secao-conteudo">
+            <div class="form-container layout-torneios">
+                <button type="button" class="btn-fechar"
+                    onclick="fecharFormulario('secao-competir-ff')">&times;</button>
+
+                <h2>Torneios de Free Fire</h2>
+                <p>Confira os campeonatos ativos e o Hall da Fama dos encerrados.</p>
+
+                <div class="grid-torneios">
+                    <div class="card-torneio ativo-vagas">
+                        <div class="badge-status aberto">Inscrições Abertas</div>
+                        <h3>Rei do Capa Guildas</h3>
+                        <div class="info-torneio">
+                            <p><strong>Data:</strong> 12/07/2026</p>
+                            <p><strong>Vagas:</strong> 20 / 48 Squads</p>
+                            <p><strong>Premiação:</strong> R$ 600,00 + Codiguins</p>
+                        </div>
+                        <button class="btn-enviar"
+                            onclick="alert('Inscrição do time realizada com sucesso!');">Inscrever Meu Time</button>
+                    </div>
+
+                    <div class="card-torneio ativo-vagas">
+                        <div class="badge-status aberto">Inscrições Abertas</div>
+                        <h3>Liga Mobile e-Finding</h3>
+                        <div class="info-torneio">
+                            <p><strong>Data:</strong> 25/07/2026</p>
+                            <p><strong>Vagas:</strong> 5 / 24 Squads</p>
+                            <p><strong>Premiação:</strong> R$ 400,00</p>
+                        </div>
+                        <button class="btn-enviar"
+                            onclick="alert('Inscrição do time realizada com sucesso!');">Inscrever Meu Time</button>
+                    </div>
+
+                    <div class="card-torneio encerrado">
+                        <div class="badge-status finalizado">Encerrado</div>
+                        <h3>Mestres do Bermuda - Temp 1</h3>
+                        <div class="info-torneio">
+                            <p><strong>Data:</strong> 01/06/2026</p>
+                            <p><strong>Vagas:</strong> Encerradas (48/48)</p>
+                            <p class="vencedor"><strong>🏆 CAMPEÃO:</strong> Fluxo fake do Amador</p>
+                        </div>
+                        <button class="btn-enviar" disabled
+                            style="background: #444; color: #aaa; box-shadow: none; cursor: not-allowed;">ENCERRADO</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: COUNTER STRIKE -->
+        <section id="secao-competir-cs" class="secao-conteudo">
+            <div class="form-container layout-torneios">
+                <button type="button" class="btn-fechar"
+                    onclick="fecharFormulario('secao-competir-cs')">&times;</button>
+
+                <h2>Torneios de Counter Strike</h2>
+                <p>Confira os campeonatos ativos e o Hall da Fama dos encerrados.</p>
+
+                <div class="grid-torneios">
+                    <div class="card-torneio ativo-vagas">
+                        <div class="badge-status aberto">Inscrições Abertas</div>
+                        <h3>Liga Prata da Casa (Clutch)</h3>
+                        <div class="info-torneio">
+                            <p><strong>Data:</strong> 20/07/2026</p>
+                            <p><strong>Vagas:</strong> 6 / 16 times</p>
+                            <p><strong>Premiação:</strong> Skins de Coleção + R$ 200</p>
+                        </div>
+                        <button class="btn-enviar"
+                            onclick="alert('Inscrição do time realizada com sucesso!');">Inscrever Meu Time</button>
+                    </div>
+
+                    <div class="card-torneio ativo-vagas">
+                        <div class="badge-status aberto">Inscrições Abertas</div>
+                        <h3>Major de Quebrada CS2</h3>
+                        <div class="info-torneio">
+                            <p><strong>Data:</strong> 05/08/2026</p>
+                            <p><strong>Vagas:</strong> 1 / 8 times</p>
+                            <p><strong>Premiação:</strong> R$ 1.000,00</p>
+                        </div>
+                        <button class="btn-enviar"
+                            onclick="alert('Inscrição do time realizada com sucesso!');">Inscrever Meu Time</button>
+                    </div>
+
+                    <div class="card-torneio encerrado">
+                        <div class="badge-status finalizado">Encerrado</div>
+                        <h3>Copa Rush B Amadora</h3>
+                        <div class="info-torneio">
+                            <p><strong>Data:</strong> 14/05/2026</p>
+                            <p><strong>Vagas:</strong> Encerradas (16/16)</p>
+                            <p class="vencedor"><strong>🏆 CAMPEÃO:</strong> Os Desprezados do Global</p>
+                        </div>
+                        <button class="btn-enviar" disabled
+                            style="background: #444; color: #aaa; box-shadow: none; cursor: not-allowed;">ENCERRADO</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

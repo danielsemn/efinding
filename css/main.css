@@ -255,7 +255,7 @@ main {
     border-radius: 10px;
     background-color: black;
     background-image: url('/img/bottons-svg/bordas.svg');
-    background-size: 125% 125%;
+    background-size: 125% 125% !important;
     background-repeat: no-repeat;
     background-position: center;
     transition: all 0.5s ease-in-out;
