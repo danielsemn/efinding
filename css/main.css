@@ -366,7 +366,24 @@ main {
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
-    padding: 2rem 1rem;
+    /* garantir que o conteúdo não fique atrás do header fixo */
+    padding: calc(8vh + 1.5rem) 1rem 2rem 1rem;
+}
+
+/* Estilo do título da seção final para ficar condizente com o layout neon */
+.final h2 {
+    display: inline-block;
+    font-size: 2.2rem;
+    color: var(--texto-claro);
+    margin: 0 0 0.6rem 0; /* pequeno espaçamento abaixo */
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    padding: 0.45rem 1rem; /* menos padding para título mais compacto */
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(0,0,0,0.78), rgba(33,1,46,0.6));
+    border: 2px solid rgba(0, 240, 255, 0.14);
+    box-shadow: 0 0 14px rgba(0,240,255,0.10), inset 0 0 6px rgba(255,255,255,0.03);
+    text-shadow: 0 0 6px rgba(0,240,255,0.08);
 }
 
 .final p {
@@ -550,6 +567,11 @@ footer {
         text-align: center;
     }
 
+    .final h2 {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
     .game-icons div,
     .game-icons .container-logos {
         display: flex;
@@ -601,6 +623,11 @@ footer {
 
     .game-icons h2 {
         font-size: 2rem;
+    }
+
+    .final h2 {
+        font-size: 1.8rem;
+        padding: 0.4rem 0.9rem;
     }
 
     .game-icons p {
